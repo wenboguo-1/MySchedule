@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/go_to"
+        android:icon="@drawable/ic_baseline_calendar_month_24"
+        android:title="GO TO"
+        app:showAsAction="ifRoom"
+        />
+    <item android:id="@+id/search_month"
+        android:title="Monthly Detail"
+        android:icon="@drawable/ic_baseline_history_24"
+        app:showAsAction="ifRoom"
+        />
+
+    <item android:id="@+id/clear_schedules"
+        android:title="Clear All Schedules"
+        android:icon="@drawable/ic_baseline_clear_all_24"
+        app:showAsAction="ifRoom"
+        />
+
+    <item android:id="@+id/today_schedules"
+        android:title="Current Month"
+        android:icon="@drawable/ic_baseline_today_24"
+        app:showAsAction="ifRoom"
+        />
+
+    <item android:id="@+id/refresh_schedules"
+        android:title="Refresh"
+        android:icon="@drawable/ic_baseline_refresh_24"
+        app:showAsAction="ifRoom"
+        />
+</menu>

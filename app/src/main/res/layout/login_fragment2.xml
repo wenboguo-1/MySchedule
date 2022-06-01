@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <data>
+      <variable
+          name="loginViewModel"
+          type="com.example.myschedule.ui.viewModule.LoginViewModel" />
+
+  </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{loginViewModel.emailErrorMessage}"
+            android:textColor="#AE0202"
+            app:layout_constraintBottom_toTopOf="@id/guideline26"
+            app:layout_constraintStart_toEndOf="@id/guideline20"
+            app:layout_constraintTop_toBottomOf="@id/guideline24" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            passwordErrorMessageLogin="@{loginViewModel.passwordErrorMessage}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:hint="Enter your password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintBottom_toTopOf="@id/guideline25"
+            app:layout_constraintEnd_toStartOf="@id/guideline21"
+            app:layout_constraintStart_toEndOf="@id/guideline20"
+            app:layout_constraintTop_toBottomOf="@id/guideline26"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24"
+            app:startIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@={loginViewModel.userPasswordInput}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            nameErrorTextLogin="@{loginViewModel.emailErrorMessage}"
+            android:layout_width="0dp"
+
+            android:layout_height="0dp"
+            android:hint="Enter your email"
+            app:layout_constraintBottom_toTopOf="@id/guideline24"
+            app:layout_constraintEnd_toStartOf="@id/guideline21"
+            app:layout_constraintStart_toEndOf="@id/guideline20"
+            app:layout_constraintTop_toBottomOf="@id/guideline22"
+
+            app:startIconDrawable="@drawable/ic_baseline_email_24"
+            app:startIconTint="@color/black">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@={loginViewModel.userEmailInput}"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <Button
+            android:id="@+id/lgButton"
+            android:layout_width="343dp"
+            android:layout_height="40dp"
+            android:onClick="@{() -> loginViewModel.onLoginClicked()}"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_lg"
+            android:gravity="center"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgetPassword" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{loginViewModel.passwordErrorMessage}"
+            android:textColor="#AE0202"
+            app:layout_constraintStart_toEndOf="@id/guideline20"
+            app:layout_constraintTop_toBottomOf="@id/guideline25"
+            app:layout_constraintBottom_toTopOf="@id/guideline64"/>
+        <TextView
+            android:id="@+id/forgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="108dp"
+            android:text="Forgot your password?"
+            android:textColor="@color/black"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline21"
+            app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.92" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.34" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.21" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline64"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.37"
+            app:layout_constraintGuide_begin="20dp" />
+
+
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

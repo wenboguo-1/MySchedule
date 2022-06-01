@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+         <variable
+             name="myScheduleViewModel"
+             type="com.example.myschedule.ui.viewModule.MyScheduleViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".ui.fragments.MyScheduleFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?attr/colorPrimaryVariant"
+            app:layout_constraintBottom_toTopOf="@id/guideline51"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0.2dp"
+            android:layout_marginTop="1dp"
+            android:background="#B8B6B6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline48" />
+
+        <TextView
+            android:id="@+id/monthOfYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
+            android:gravity="left"
+            android:onClick="@{() -> myScheduleViewModel.setOnMonthOfYearClicked()}"
+
+            android:paddingLeft="1dp"
+            android:text="January"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+
+
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="@+id/cardView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline18" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:onClick="@{()->myScheduleViewModel.onSundayClicked()}"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintStart_toEndOf="@id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3"
+                    />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center|top"
+                    android:text="SUN"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintBottom_toTopOf="@+id/cardViewGuildLine25"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine28"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine27"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dayOfSunday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="bottom|center"
+
+                    android:gravity="center"
+                    android:text="3"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine28"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine27"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewGuildLine26" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->myScheduleViewModel.onMondayClicked()}"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            app:layout_constraintStart_toEndOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3"
+                    />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85"
+                    />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="top|center"
+                    android:autoSizeTextType="uniform"
+                    android:text="MON"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cardViewGuildLine21"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine24"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine23"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dayOfMonday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="bottom|center"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine24"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine23"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewGuildLine22" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+             android:onClick="@{()->myScheduleViewModel.onTuesdayClicked()}"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3"
+                    />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85"
+                    />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center|top"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:text="TUE"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cardViewGuildLine17"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine20"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine19"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dayOfTuesday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="bottom|center"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine20"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine19"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewGuildLine18" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()-> myScheduleViewModel.onWednesdayClicked()}"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toEndOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3"/>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85"
+                    />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="top|center"
+                    android:autoSizeTextType="uniform"
+                    android:text="WED"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cardViewGuildLine13"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine16"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine15"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dayOfWednesday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+
+                    android:layout_gravity="center|bottom"
+                    android:textSize="15sp"
+                    android:text="18"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine16"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine15"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewGuildLine14" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()->myScheduleViewModel.onThursdayClicked()}"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline11"
+            app:layout_constraintStart_toEndOf="@+id/guideline10"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3"
+                    />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85"
+                    />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center|top"
+                    android:text="THU"
+                    android:textColor="@color/black"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/cardViewGuildLine5"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine8"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine7"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dayOfThursday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:text="18"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine8"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine7"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewGuildLine6" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+
+
+            android:id="@+id/cardView6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            app:cardElevation="0dp"
+            android:onClick="@{()->myScheduleViewModel.onFridayClicked()}"
+            app:layout_constraintBottom_toTopOf="@id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+            app:layout_constraintStart_toEndOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3"
+                    />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85"
+                    />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center|top"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:text="FRI"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toTopOf="@+id/cardViewGuildLine1"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine4"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dayOfFriday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:text="18"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine4"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine3"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewGuildLine2"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:onClick="@{()-> myScheduleViewModel.onSaturdayClicked()}"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/guideline16"
+            app:layout_constraintEnd_toStartOf="@id/guideline47"
+            app:layout_constraintStart_toEndOf="@+id/guideline13"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.3"
+                    />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.15"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/cardViewGuildLine12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.85"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center|top"
+                    android:gravity="center"
+                    android:text="SAT"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:autoSizeTextType="uniform"
+                    app:layout_constraintBottom_toTopOf="@+id/cardViewGuildLine9"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine12"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine11"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dayOfSaturday"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardViewGuildLine12"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewGuildLine11"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewGuildLine10" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <FrameLayout
+            android:id="@+id/schedule_list_fragment"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline46" >
+
+        </FrameLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addNewSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_add"
+
+
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline17" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="-28dp"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.43" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.56" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.69" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.82" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.065" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.001" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.94" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.165" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.055"
+            app:layout_constraintGuide_begin="20dp" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

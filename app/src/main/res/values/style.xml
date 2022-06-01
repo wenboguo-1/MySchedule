@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/cardview_dark_background</item>
+    </style>
+
+    <style name="BottomSheetDialogThem" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="MyProgressDialog" parent="Theme.AppCompat.Dialog">
+    </style>
+    <style name="Theme.SearchRecyclerview" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+           <item name="windowNoTitle" > true</item>
+    </style>
+</resources>
